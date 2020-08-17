@@ -13,6 +13,8 @@
 
 .nav-item {
   background-color: $blueish;
-  color: white;
+  a {
+    color: white;
+  }
 
 }
