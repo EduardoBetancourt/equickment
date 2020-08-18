@@ -3,11 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
-  def new
-    @package = Package.find(params[:package_id])
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
     @package = Package.find(params[:package_id])
