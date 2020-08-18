@@ -2,7 +2,10 @@
   <div class="row">
     <div class="col-7">
       <div class="package-list">
+        <div class="header-package-list">
         <h1>See all our packages</h1>
+        <a href="/packages/new" class="add-package">+ Add your own</a>
+        </div>
         <% @packages.each do |package| %>
           <%= link_to package_path(package), class:"product-card" do %>
             <div class="card-product">
@@ -18,7 +21,9 @@
       </div>
     </div>
     <div class="col-5">
-      <img id="map-image" src="https://images.unsplash.com/photo-1580715911453-d6d9cffd5771?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=874&q=80">
+      <div class="img-map">
+        <img id="map-image" src="https://images.unsplash.com/photo-1580715911453-d6d9cffd5771?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=874&q=80">
+      </div>
     </div>
   </div>
 
