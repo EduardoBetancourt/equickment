@@ -1,1 +1,8 @@
-<h1>these are all the bookings</h1>
+<div class="container">
+  <h1>these are all the bookings</h1>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li><%= booking.package.name %> from: <%= booking.start_date %> until: <%= booking.end_date %></li>
+    <% end %>
+  </ul>
+</div>
