@@ -1,1 +1,15 @@
-<h1>add a new booking</h1>
+<h1><%= @package.name %></h1>
+
+<div class="container">
+  <h1></h1>
+    <div class="">
+      <%= simple_form_for  [@package, @booking]  do |f| %>
+      <% f.label "From" %>
+      <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+      <% f.label "Until" %>
+      <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
+      <%= f.submit "Submit", class: "btn btn-info" %>
+    <% end %>
+    </div>
+</div>
+
