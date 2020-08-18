@@ -9,7 +9,7 @@
         <% @packages.each do |package| %>
           <%= link_to package_path(package), class:"product-card" do %>
             <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+              <%= cl_image_tag package.photo.key, class:"card-img" %>
               <div class="card-product-infos">
                 <h2><%= package.name %></h2>
                 <p><%= package.description %></p>
