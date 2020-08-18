@@ -1,1 +1,4 @@
-<h1>these are all the packages</h1>
+<h1>See all our packages</h1>
+<% @packages.each do |package|  %>
+<%= link_to package.name, package_path(package) %> <p><%= package.description %>,$<%=  package.price %></p>
+<% end %>
