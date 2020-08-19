@@ -1,0 +1,8 @@
+<%= simple_form_for package do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit, class: 'btn btn-info' %>
+<% end %>
