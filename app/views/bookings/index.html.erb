@@ -1,8 +1,24 @@
 <div class="container">
-  <h1>these are all the bookings</h1>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><%= booking.package.name %> from: <%= booking.start_date %> until: <%= booking.end_date %></li>
+  <h1>These are all your bookings</h1>
+    <div class="row">
+      <% @bookings.each do |booking| %>
+      <div class="col-lg-6">
+       <%= link_to package_path(booking.package), class:"product-card" do %>
+       <div class="card-product">
+        <% if booking.package.photo.attached? %>
+        <%= cl_image_tag booking.package.photo.key, class:"card-img"%>
+        <% end %>
+        <div class="card-product-infos">
+          <h2><%= booking.package.name %></h2>
+          <p><%= booking.package.description %></p>
+          <p>You booked this package from <%= booking.start_date %> until: <%= booking.end_date %></p>
+          <h2 class="price-tag">$<%= booking.package.price %></h2>
+        </div>
+      </div>
+      <% end %>
+    </div>
     <% end %>
-  </ul>
+  </div>
 </div>
+
+
