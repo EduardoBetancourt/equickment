@@ -1,11 +1,34 @@
 <div class="banner text-center">
   <div id="equickment">EQUICKMENT</div>
   <p id="header" class="text-center">Rent your equipment quickly for every ocassion</p>
-  <button class="btn">See All Offers</button>
+  <a href="packages"><button class="btn">See All Offers</button></a>
 </div>
 
-<div class="container-1 text-center">
-  <div class="header1">Top Offers</div>
+<div class="container">
+    <div class="flex-container">
+      <div class="card feature-card">
+        <%= image_tag "movies.jpg" %>
+<!--       <img src="" class="card-img-top" alt="...">
+ -->      <div class="card-body">
+        <h5 class="card-title"><strong>Create New Experiences</strong></h5>
+        <p class="card-text">Unique experiences offered by other members of Equickment.</p>
+      </div>
+    </div>
+    <div class="card feature-card">
+      <%= image_tag "bycycle.jpg" %>
+      <div class="card-body">
+        <h5 class="card-title"><strong>Fast Sign Up</strong></h5>
+        <p class="card-text">Simple and easy sign up for new users to rent or post equipment.</p>
+      </div>
+    </div>
+    <div class="card feature-card">
+      <%= image_tag "community.jpg" %>
+      <div class="card-body">
+        <h5 class="card-title"><strong>Become Part of a Community</strong></h5>
+        <p class="card-text">Be part of a fast growing community and get notified for new offers of Equickment.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
