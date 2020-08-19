@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+#equickment {
+  color: white;
+  font-size: 60px;
+  padding-top: 170px;
+  font-family: 'Pragati Narrow', sans-serif;
+  font-weight: 550;
+}
+
+#header {
+  font-size: 25px;
+  padding-top: 30px;
+  color: white;
+}
+
+.btn {
+  border-radius: 20%;
+  background-color: #ffaa71;
+  color: white;
+}
+
+.banner {
+  background-image: url('https://images.unsplash.com/photo-1528094449071-cd2b666e0737?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80');
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.container-1 {
+  padding-top: 20px;
+}
+
+.header1 {
+  font-size: 45px;
+}
