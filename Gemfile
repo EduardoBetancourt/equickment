@@ -6,7 +6,7 @@ ruby '2.6.6'
 # Cusotmized Gems
 gem 'faker'
 gem 'devise'
-
+gem 'geocoder'
 # Automatic Rails Gems
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'pg', '>= 0.18', '< 2.0'
