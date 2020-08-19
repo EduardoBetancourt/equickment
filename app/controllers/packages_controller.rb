@@ -2,7 +2,15 @@ class PackagesController < ApplicationController
   before_action :set_package, only: %i[show edit update destroy]
 
   def index
-    @packages = Package.all
+    @packages = Package.geocoded
+
+    @markers = @packages.map do |package|
+      {
+        lat: package.latitude,
+        lng: package.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { package: package })
+      }
+    end
   end
 
   def show
