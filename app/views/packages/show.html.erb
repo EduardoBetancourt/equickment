@@ -1,33 +1,35 @@
 <div class="container">
-  <div class="row">
-    <div class="package-header col-12">
+  <div class="row justify-content-center">
+    <div class="package-header col-12 col-lg-6">
       <h2><%= @package.name %></h2>
       <h2><small>$<%= @package.price %>/<small>day</small></small></h2>
     </div>
   </div>
 
-  <div class="row">
-    <div class="carousel col-12 mb-3">
+  <div class="row justify-content-center">
+    <div class="carousel col-12 col-lg-6 mb-3">
       <% if @package.photo.attached?  %>
       <%= cl_image_tag @package.photo.key %>
       <% end %>
     </div>
   </div>
 
-  <div class="row">
-  <div class="package-details col-8">
+  <div class="row justify-content-center">
+  <div class="package-details col-8 col-lg-4">
     <p> By: <em> <%= @package.user.email %></em></p>
     <p> <%= @package.description %></p>
     <p> Address: <%= @package.address %></p>
   </div>
 
-  <div class="booking col-4">
+  <div class="booking col-4 col-lg-2">
     <%= simple_form_for [ @package, @booking ] do |f| %>
       <% f.label "From" %>
       <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
       <% f.label "Until" %>
       <%= f.input :end_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
-      <%= f.submit "Submit", class: "btn btn-info" %>
+      <div class="text-center">
+        <%= f.submit "Submit", class: "btn btn-info" %>
+      </div>
     <% end %>
   </div>
   </div>
