@@ -14,7 +14,8 @@
 }
 
 div#fixed {
-  position: fixed;
+  position: sticky;
+  top: 55px;
 }
 
 .row {
