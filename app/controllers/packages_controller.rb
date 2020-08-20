@@ -11,6 +11,16 @@ class PackagesController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { package: package })
       }
     end
+
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
+      @packages = Package.where("name ILIKE ? OR description ILIKE ? OR address ILIKE ?",
+        "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+    else
+      @packages = Package.all
+    end
+
+
   end
 
   def show
