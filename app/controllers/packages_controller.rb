@@ -25,7 +25,7 @@ class PackagesController < ApplicationController
     @package = Package.new(strong_params)
     @package.user = current_user
     if @package.save
-      redirect_to package_path(@package)
+      redirect_to new_package_package_category_path(@package)
     else
       render :new
     end

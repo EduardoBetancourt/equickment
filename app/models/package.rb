@@ -1,6 +1,8 @@
 class Package < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_many :package_categories, dependent: :destroy
+  has_many :categories, through: :package_categories
   geocoded_by :address
 
   validates :name, presence: true
