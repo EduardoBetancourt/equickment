@@ -1,0 +1,7 @@
+<div class="container">
+  <h2>Don't forget to add some categories to your package</h2>
+  <%= simple_form_for [@package, @package_category] do |f| %>
+    <%= f.input :category, collection: Category.all, input_html: { multiple: true, class: 'select2 multiple-select' } %>
+    <%= f.submit "Add package", class: 'btn btn-info' %>
+  <% end %>
+</div>
