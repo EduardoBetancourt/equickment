@@ -9,4 +9,9 @@
 .package-header {
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
+}
+
+.category-tags {
+  background-color: $blueish;
 }

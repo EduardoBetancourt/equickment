@@ -13,8 +13,10 @@
               <% end %>
               <div class="card-product-infos">
                 <h2><%= package.name %></h2>
-                <p><%= package.description %></p>
-                <p>The package is available at: <%= package.address %></p>
+                <p>Location: <%= package.address %></p>
+                <% package.package_categories.each do |package_category| %>
+                  <span class="btn btn-sm package-tags">✓ <%= package_category.category.name %></span>
+                <% end %>
                 <h2 class="price-tag">$<%= package.price %></h2>
               </div>
             </div>
