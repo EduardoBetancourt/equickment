@@ -7,7 +7,7 @@ const buildMap = () => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v10'
+    style: 'mapbox://styles/mapbox/light-v10',
   });
 };
 
@@ -36,6 +36,7 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl }));
+    map.addControl(new mapboxgl.NavigationControl());
   }
 };
 
