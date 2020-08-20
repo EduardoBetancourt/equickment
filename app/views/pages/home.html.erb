@@ -6,21 +6,25 @@
 
 <div class="container">
     <div class="flex-container">
+      <%= link_to new_package_path do %>
+        <div class="card feature-card">
+          <%= image_tag "movies.jpg" %>
+  <!--       <img src="" class="card-img-top" alt="...">
+   -->      <div class="card-body">
+          <h5 class="card-title"><strong>Create New Experiences</strong></h5>
+          <p class="card-text">Unique experiences offered by other members of Equickment.</p>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to new_user_registration_path do %>
       <div class="card feature-card">
-        <%= image_tag "movies.jpg" %>
-<!--       <img src="" class="card-img-top" alt="...">
- -->      <div class="card-body">
-        <h5 class="card-title"><strong>Create New Experiences</strong></h5>
-        <p class="card-text">Unique experiences offered by other members of Equickment.</p>
+        <%= image_tag "bycycle.jpg" %>
+        <div class="card-body">
+          <h5 class="card-title"><strong>Fast Sign Up</strong></h5>
+          <p class="card-text">Simple and easy sign up for new users to rent or post equipment.</p>
+        </div>
       </div>
-    </div>
-    <div class="card feature-card">
-      <%= image_tag "bycycle.jpg" %>
-      <div class="card-body">
-        <h5 class="card-title"><strong>Fast Sign Up</strong></h5>
-        <p class="card-text">Simple and easy sign up for new users to rent or post equipment.</p>
-      </div>
-    </div>
+    <% end %>
     <div class="card feature-card">
       <%= image_tag "community.jpg" %>
       <div class="card-body">
