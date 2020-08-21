@@ -1,16 +1,16 @@
-<div class="container bg-light mt-3 pb-3 rounded-10">
-    <a href="/packages" class="add-package">
-      <i class="fas fa-arrow-left mt-3"></i>
+<a href="/packages" class="add-package">
+      <i class="fas fa-arrow-left mt-3 ml-3"></i>
     </a>
+<div class="container bg-light pb-3 rounded-10 col-12 col-lg-6">
   <div class="row justify-content-center">
-    <div class="package-header col-12 col-lg-6">
+    <div class="package-header col-12">
       <h2><%= @package.name %></h2>
       <h2><small>$<%= @package.price %>/<small>day</small></small></h2>
     </div>
   </div>
 
   <div class="row justify-content-center">
-    <div class="col-12 col-lg-6 mb-3">
+    <div class="col-12 mb-3">
       <% if @package.photos.attached?%>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
@@ -38,7 +38,7 @@
 
 
   <div class="row justify-content-center">
-  <div class="package-details col-8 col-lg-4">
+  <div class="package-details col-8">
     <p> By: <em> <%= @package.user.email %></em></p>
     <p> <%= @package.description %></p>
     <p> Address: <%= @package.address %></p>
@@ -48,7 +48,7 @@
       <% end %>
   </div>
 
-  <div class="booking col-4 col-lg-2">
+  <div class="booking col-4">
     <%= simple_form_for [ @package, @booking ] do |f| %>
       <% f.label "From" %>
       <%= f.input :start_date, wrapper_html: { class: 'flex-select' }, as: :date, html5: true %>
