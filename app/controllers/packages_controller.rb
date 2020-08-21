@@ -35,7 +35,7 @@ class PackagesController < ApplicationController
     @package = Package.new(strong_params)
     @package.user = current_user
     if @package.save
-      redirect_to new_package_package_category_path(@package)
+      redirect_to package_path(@package)
     else
       render :new
     end
@@ -61,7 +61,7 @@ class PackagesController < ApplicationController
   private
 
   def strong_params
-    params.require(:package).permit(:name, :price, :description, :address, :photo)
+    params.require(:package).permit(:name, :price, :description, :address, :photo, category_ids: [])
   end
 
   def set_package
