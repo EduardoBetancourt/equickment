@@ -9,7 +9,7 @@ class Package < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :address, presence: true
-  has_one_attached :photo
+  has_many_attached :photos
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model

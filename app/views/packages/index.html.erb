@@ -8,8 +8,8 @@
         <% @packages.each do |package| %>
           <%= link_to package_path(package), class:"product-card" do %>
             <div class="card-product">
-              <% if package.photo.attached? %>
-              <%= cl_image_tag package.photo.key, class:"card-img"%>
+              <% if package.photos.attached? %>
+              <%= cl_image_tag package.photos.first.key, class:"card-img"%>
               <% end %>
               <div class="card-product-infos">
                 <h2><%= package.name %></h2>
