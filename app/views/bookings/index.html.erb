@@ -1,5 +1,8 @@
-<div class="container">
-  <h1>These are all your bookings</h1>
+<a href="/packages" class="add-package">
+  <i class="fas fa-arrow-left mt-3 ml-4"></i>
+</a>
+<div class="container bg-light rounded-10 pb-5 min-vh-100">
+  <h1 class="py-3">These are all your bookings</h1>
     <div class="row">
       <% @bookings.each do |booking| %>
       <div class="col-lg-6">
@@ -10,9 +13,7 @@
         <% end %>
         <div class="card-product-infos">
           <h2><%= booking.package.name %></h2>
-          <p><%= booking.package.description %></p>
           <p>You booked this package from <%= booking.start_date %> until: <%= booking.end_date %></p>
-          <h2 class="price-tag">$<%= booking.package.price %></h2>
         </div>
       </div>
       <% end %>
