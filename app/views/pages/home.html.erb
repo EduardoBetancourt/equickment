@@ -4,33 +4,31 @@
   <a href="packages"><button class="btn">See All Offers</button></a>
 </div>
 
-<div class="container">
-    <div class="flex-container">
-      <%= link_to new_package_path do %>
-        <div class="card feature-card">
+<div class="container" id="card-container">
+    <div class="row">
+      <div class="col-4">
+        <a href="users/sign_up"><div class="feature-card">
           <%= image_tag "movies.jpg" %>
-  <!--       <img src="" class="card-img-top" alt="...">
-   -->      <div class="card-body">
+         <div class="card-body">
           <h5 class="card-title"><strong>Create New Experiences</strong></h5>
           <p class="card-text">Unique experiences offered by other members of Equickment.</p>
-        </div>
-      <% end %>
+        </div></a></div>
     </div>
-    <%= link_to new_user_registration_path do %>
-      <div class="card feature-card">
+    <div class="col-4">
+      <a href="users/sign_up"><div class="feature-card">
         <%= image_tag "bycycle.jpg" %>
         <div class="card-body">
           <h5 class="card-title"><strong>Fast Sign Up</strong></h5>
           <p class="card-text">Simple and easy sign up for new users to rent or post equipment.</p>
-        </div>
+        </div></a></div>
       </div>
-    <% end %>
-    <div class="card feature-card">
+    <div class="col-4">
+      <div class="feature-card">
       <%= image_tag "community.jpg" %>
       <div class="card-body">
         <h5 class="card-title"><strong>Become Part of a Community</strong></h5>
         <p class="card-text">Be part of a fast growing community and get notified for new offers of Equickment.</p>
-      </div>
+      </div></div>
     </div>
     </div>
 </div>
