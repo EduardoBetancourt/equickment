@@ -5,8 +5,8 @@
       <div class="col-lg-6">
        <%= link_to package_path(booking.package), class:"product-card" do %>
        <div class="card-product">
-        <% if booking.package.photo.attached? %>
-        <%= cl_image_tag booking.package.photo.key, class:"card-img"%>
+        <% if booking.package.photos.attached? %>
+        <%= cl_image_tag booking.package.photos.first.key, class:"card-img"%>
         <% end %>
         <div class="card-product-infos">
           <h2><%= booking.package.name %></h2>

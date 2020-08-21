@@ -3,6 +3,7 @@
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: 'btn btn-info' %>
+  <%= f.association :categories, as: :check_boxes %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button :submit, class: 'btn' %>
 <% end %>
