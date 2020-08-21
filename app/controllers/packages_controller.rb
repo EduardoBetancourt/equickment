@@ -61,7 +61,7 @@ class PackagesController < ApplicationController
   private
 
   def strong_params
-    params.require(:package).permit(:name, :price, :description, :address, :photo, category_ids: [])
+    params.require(:package).permit(:name, :price, :description, :address, photos: [], category_ids: [])
   end
 
   def set_package
