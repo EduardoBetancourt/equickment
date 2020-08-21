@@ -14,10 +14,14 @@
               <div class="card-product-infos">
                 <h2><%= package.name %></h2>
                 <p>Location: <%= package.address %></p>
+                <div class="package-tags-price">
+                <div>
                 <% package.package_categories.each do |package_category| %>
                   <span class="btn btn-sm package-tags">✓ <%= package_category.category.name %></span>
                 <% end %>
-                <h2 class="price-tag">$<%= package.price %></h2>
+                </div>
+                <h2 class="price-tag"><small> $ <%= package.price %></small></h2>
+                </div>
               </div>
             </div>
           <% end %>
