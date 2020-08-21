@@ -3,7 +3,7 @@
       <div class="package-list" id="scrollable">
         <div class="header-package-list">
         <h1>See all our packages</h1>
-        <a href="/packages/new" class="add-package">+ Add your own</a>
+        <a href="/packages/new" class="add-package"><i class="fas fa-plus"></i></a>
         </div>
         <% @packages.each do |package| %>
           <%= link_to package_path(package), class:"product-card" do %>
