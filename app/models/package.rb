@@ -9,12 +9,15 @@ class Package < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :address, presence: true
-  has_one_attached :photo
+  has_many_attached :photos
   after_validation :geocode, if: :will_save_change_to_address?
 
   include PgSearch::Model
-  pg_search_scope :search_by_name_and_description_and_address,
-    against: [:name, :description, :address],
+    pg_search_scope :global_search,
+    against: [ :name, :description, :address ],
+    associated_against: {
+      categories: :name
+    },
     using: {
       tsearch: { prefix: true }
     }

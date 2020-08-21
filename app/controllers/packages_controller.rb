@@ -13,9 +13,10 @@ class PackagesController < ApplicationController
     end
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
-      @packages = Package.where("name ILIKE ? OR description ILIKE ? OR address ILIKE ?",
-        "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
+      @packages = Package.global_search(params[:query])
+      # sql_query = "name ILIKE :query OR description ILIKE :query OR address ILIKE :query"
+      # @packages = Package.where("name ILIKE ? OR description ILIKE ? OR address ILIKE ?",
+      #   "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     else
       @packages = Package.all
     end
@@ -61,7 +62,7 @@ class PackagesController < ApplicationController
   private
 
   def strong_params
-    params.require(:package).permit(:name, :price, :description, :address, :photo, category_ids: [])
+    params.require(:package).permit(:name, :price, :description, :address, photos: [], category_ids: [])
   end
 
   def set_package
